@@ -1,0 +1,28 @@
+/* Tu CSS existente */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+:host ::ng-deep .p-datatable td,
+:host ::ng-deep .p-datatable th {
+  padding: 0.5rem 0.75rem !important;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 2px solid #020202;
+}
+
+
+.card {
+  padding: 2rem;
+}
+
+
+.table-header {
+    margin-bottom: 1rem;
+    border: 5px solid #020202;
+}
