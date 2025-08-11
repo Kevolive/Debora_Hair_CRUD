@@ -37,7 +37,8 @@ export class ClienteFormComponent implements OnInit {
       cantidad: ['', [Validators.required, Validators.min(1)]],
       precioUnitario: ['', [Validators.required, Validators.min(1)]],
       direccion: ['', Validators.required,],
-      cel: ['', [Validators.required, Validators.pattern(/^3\d{9}$/)]],
+      // cel: ['', [Validators.required, Validators.pattern(/^3\d{9}$/)]],
+      cel: ['', Validators.required],
       precioTotal: [0],
       fecha: ['', Validators.required],
       image: ['', Validators.pattern(/^(https?:\/\/.*\.(?:png|jpg|jpeg|webp))$/)]
@@ -102,8 +103,6 @@ export class ClienteFormComponent implements OnInit {
         }
       });
     }
-
-    this.router.navigate(['/clientes']);
   }
   onCancel(): void {
     this.router.navigate(['/clientes']);

@@ -5,14 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//primeng
+// primeng
 import { ButtonModule } from 'primeng/button';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,12 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     ButtonModule,
-    HttpClientModule // Import HttpClientModule to enable HTTP services
-
-
+    HttpClientModule
   ],
-  providers: [provideClientHydration(),
-
+  providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })

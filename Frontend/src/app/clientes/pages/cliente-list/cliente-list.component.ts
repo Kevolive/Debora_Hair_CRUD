@@ -34,19 +34,19 @@ export class ClienteListComponent implements OnInit {
 
 
   cargarClientes() {
-      this.loading = true;
-
-  this.clienteHttpService.getAll().subscribe({
-    next: (data) => {
-      this.clientes = data ?? [];
-      this.loading = false;
-    },
-    error: (err) => {
-      console.error('Error al cargar clientes:', err);
-      this.clientes = [];
-      this.loading = false;
-    }
-  });
+    this.loading = true;
+    this.clienteHttpService.getAll().subscribe({
+      next: (data) => {
+        // Si la respuesta es { data: Cliente[] }, extraer el array
+        this.clientes = (data as any)?.data ?? [];
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error al cargar clientes:', err);
+        this.clientes = [];
+        this.loading = false;
+      }
+    });
   }
 
   onCreate() {

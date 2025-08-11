@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://crud-clientes-cyc3.onrender.com/',
+  apiUrl: 'http://localhost:3000',
   firebaseConfig: {
     apiKey: "AIzaSyBuuQTyoq4M4DvH6rXsjuCrX7ya1nazbJI",
     authDomain: "clientes-app-a0e74.firebaseapp.com",
